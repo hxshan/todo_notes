@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.EditFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:padding="12dp"
+        tools:context=".EditFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/editItemHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="Edit Note."
+            android:textStyle="bold"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Enter the title"
+            android:padding="12dp"
+            android:textSize="20sp"
+            android:layout_below="@id/editItemHeading"
+            android:background="@drawable/border"
+            android:layout_marginTop="16dp"
+            android:maxLines="1"/>
+
+        <EditText
+            android:id="@+id/editItemDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter the description"
+            android:gravity="top"
+            android:padding="12dp"
+            android:textSize="18sp"
+            android:background="@drawable/border"
+            android:layout_below="@id/editItemTitle"
+            android:layout_marginTop="12dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/editItemFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:backgroundTint="@color/blue"
+            android:tintMode="@color/white"
+            android:src="@drawable/ic_done"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="editFab" />
+        
+    </RelativeLayout>
+
+</layout>
