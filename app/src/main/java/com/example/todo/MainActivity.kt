@@ -15,11 +15,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupViewModel()
     }
 
     private fun setupViewModel(){
         val itemRepository=ItemRepository(ItemDatabase(this))
         val viewModelProviderFactory = ItemViewModelFactory(application,itemRepository)
-        itemViewModel= ViewModelProvider(this,viewModelProviderFactory)[itemViewModel::class.java]
+        itemViewModel= ViewModelProvider(this,viewModelProviderFactory)[ItemViewModel::class.java]
     }
 }

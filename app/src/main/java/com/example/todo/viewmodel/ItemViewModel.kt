@@ -21,6 +21,10 @@ class ItemViewModel(app:Application,private val itemRepository: ItemRepository):
         viewModelScope.launch {
             itemRepository.updateItem(item)
         }
+    fun getAllItems()=itemRepository.getAllItems()
+
+    fun searchItem(query:String?)=
+        itemRepository.getSearchItem(query)
 
 
 }
