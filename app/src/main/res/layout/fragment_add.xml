@@ -22,7 +22,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/addNoteTitle"
+            android:id="@+id/addItemTitle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="Enter the title"
@@ -43,7 +43,7 @@
             android:padding="12dp"
             android:textSize="18sp"
             android:background="@drawable/border"
-            android:layout_below="@id/addNoteTitle"
+            android:layout_below="@id/addItemTitle"
             android:layout_marginTop="12dp" />
 
     </RelativeLayout>
