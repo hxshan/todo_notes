@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="12dp"
-        tools:context=".EditFragment">
+        tools:context=".EditFragment"
+        android:background="@drawable/background_gradient">
 
         <TextView
             android:id="@+id/editItemHeading"
@@ -21,31 +22,36 @@
             android:layout_marginTop="16dp"
             android:text="Edit Note."
             android:textStyle="bold"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textColor="@color/darkwhite"/>
 
         <EditText
             android:id="@+id/editItemTitle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="Enter the title"
+            android:textColorHint="@color/darkwhite"
             android:padding="12dp"
             android:textSize="20sp"
             android:layout_below="@id/editItemHeading"
             android:background="@drawable/border"
             android:layout_marginTop="16dp"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            android:textColor="@color/darkwhite"/>
 
         <EditText
             android:id="@+id/editItemDesc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Enter the description"
+            android:textColorHint="@color/darkwhite"
             android:gravity="top"
             android:padding="12dp"
             android:textSize="18sp"
             android:background="@drawable/border"
             android:layout_below="@id/editItemTitle"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:textColor="@color/darkwhite"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/editItemFab"
@@ -55,12 +61,12 @@
             android:layout_marginBottom="20dp"
             android:clickable="true"
             android:focusable="true"
-            android:backgroundTint="@color/blue"
+            android:background="@drawable/button_background"
             android:tintMode="@color/white"
             android:src="@drawable/ic_done"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:contentDescription="editFab" />
+            android:contentDescription="@string/editfab" />
         
     </RelativeLayout>
 

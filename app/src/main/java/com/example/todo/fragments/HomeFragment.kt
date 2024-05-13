@@ -13,6 +13,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.todo.MainActivity
 import com.example.todo.R
@@ -21,16 +22,6 @@ import com.example.todo.databinding.FragmentHomeBinding
 import com.example.todo.model.Item
 import com.example.todo.viewmodel.ItemViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextListener,MenuProvider {
 
     private var homeBinding:FragmentHomeBinding?=null
@@ -42,7 +33,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         homeBinding=FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -76,7 +67,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
     private fun  setupHomeRV(){
         itemAdapter= ItemAdapter()
         binding.homeRV.apply {
-            layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+            //layoutManager=StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+            layoutManager=LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
             setHasFixedSize(true)
             adapter = itemAdapter
         }
@@ -84,7 +76,6 @@ class HomeFragment : Fragment(R.layout.fragment_home),SearchView.OnQueryTextList
             itemViewModel.getAllItems().observe(viewLifecycleOwner){ item ->
                 itemAdapter.differ.submitList(item)
                 updateUI(item)
-
             }
         }
     }

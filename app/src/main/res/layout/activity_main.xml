@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:background="@drawable/background_gradient">
 
 
 <androidx.fragment.app.FragmentContainerView
